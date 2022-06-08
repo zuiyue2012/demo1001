@@ -4,6 +4,7 @@ import com.example.demo1001.domain.User;
 import com.example.demo1001.service.UserService;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -18,5 +19,10 @@ public class UserController {
     @GetMapping("/userlist")
     public List<User> userlist() {
         return userService.list();
+    }
+
+    @PostMapping("/addUser")
+    public void addUser(User user){
+        userService.save(user);
     }
 }

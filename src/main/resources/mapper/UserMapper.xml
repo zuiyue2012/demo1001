@@ -15,4 +15,8 @@
     <select id="selectList" resultMap="BaseResultMap">
         select * from user
     </select>
+    <insert id="insert" parameterType="com.example.demo1001.domain.User">
+        INSERT INTO `user`
+        set `id`=#{id},`name`=#{name}
+    </insert>
 </mapper>
